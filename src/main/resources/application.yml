@@ -11,7 +11,11 @@ spring:
     prefix: /WEB-INF/
     suffix: .jsp
 
+logging.level.root: INFO
+
 s3:
   accessKey: <access key id>
   secretKey: <secret access key>
   bucketName: <name of the bucket>
+
+
