@@ -15,7 +15,13 @@ logging.level:
   root: WARN
   org.superbiz.moviefun: DEBUG
 
+rabbitmq:
+  uri: amqp://guest:guest@localhost
+  queue: my-rabbit-queue
+
 s3:
-  accessKey: <access key id>
-  secretKey: <secret access key>
-  bucketName: <name of the bucket>
+  endpointUrl: http://127.0.0.1:9000
+  accessKey: YZZ8VX8PD446VF3P3DX0
+  secretKey: FqOKGnNVTNGzLtSIAV8ZNCQ6DxgbjY9K9FBqXfaf
+  bucketName: moviefun
+
