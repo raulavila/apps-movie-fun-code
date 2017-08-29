@@ -1,4 +1,4 @@
-server.port: 8081
+server.port: 8083
 
 spring:
   jpa:
@@ -17,3 +17,4 @@ s3:
   accessKey: <access key id>
   secretKey: <secret access key>
   bucketName: <name of the bucket>
+  endpointUrl: http://127.0.0.1:9000
