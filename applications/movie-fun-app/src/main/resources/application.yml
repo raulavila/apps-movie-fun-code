@@ -1,4 +1,6 @@
 spring:
+  application:
+    name: movie-fun-app
   jpa:
     generate-ddl: true
     properties.hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
