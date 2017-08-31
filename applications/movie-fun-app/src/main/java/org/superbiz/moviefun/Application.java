@@ -8,12 +8,15 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.context.annotation.Bean;
+import org.superbiz.moviefun.albumsapi.CoverCatalog;
 import org.superbiz.moviefun.blobstore.BlobStore;
 import org.superbiz.moviefun.blobstore.S3Store;
 import org.superbiz.moviefun.moviesapi.MovieServlet;
 
 @EnableEurekaClient
+@EnableHystrix
 @SpringBootApplication
 public class Application {
 
@@ -36,5 +39,10 @@ public class Application {
         AmazonS3Client s3Client = new AmazonS3Client(credentials);
 
         return new S3Store(s3Client, s3BucketName);
+    }
+
+    @Bean
+    public CoverCatalog coverCatalog(BlobStore blobStore) {
+        return new CoverCatalog(blobStore);
     }
 }
